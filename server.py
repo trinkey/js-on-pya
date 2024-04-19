@@ -13,3 +13,7 @@ def css_base():
 @app.errorhandler(404)
 def _404(err):
     return flask.send_file("./404.html")
+
+@app.route("/favicon.ico")
+def favicon():
+    return flask.send_file("./favicon.ico")
