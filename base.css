@@ -1,0 +1,158 @@
+:root {
+  --yellow: #f0db4f;
+  --background: #323330;
+  --text: #ffffff;
+  --dark: #000000;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Neutraface Text", Arial;
+}
+
+a:link, a:visited {
+  color: var(--yellow);
+}
+
+h1 {
+  font-size: 72px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0;
+}
+
+header {
+  background-color: var(--yellow);
+  color: var(--background);
+  padding: 5em 0;
+}
+
+footer {
+  background-color: var(--dark);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 20px 0 15px 0;
+  font-size: 0.8em;
+}
+
+svg {
+  fill: var(--yellow);
+}
+
+.spacing {
+  display: block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.spacing.small {
+  height: 2.5em;
+}
+
+.spacing.medium {
+  height: 5em;
+}
+
+.spacing.large {
+  height: 10em;
+}
+
+.col-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.col-2 > * {
+  width: 50vw;
+  max-width: 750px;
+}
+
+.col-2 > .col-thin {
+  width: 25vw;
+  max-width: 500px;
+}
+
+.logo-container,
+.qu-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 8em;
+  height: 100%;
+}
+
+.logo-container svg,
+.qu-container svg {
+  transition: transform .2s ease-in-out;
+}
+
+.logo-container:hover svg {
+  transform: scale(125%)
+             rotate(-7deg)
+             translate(10px, -10px);
+  transition: transform .3s ease-in-out;
+}
+
+.qu-container:hover svg {
+  transform: scale(120%)
+             rotate(368deg);
+  transition: transform .3s ease-in-out;
+}
+
+.title {
+  text-shadow: 20px 20px 10px var(--yellow);
+  transition: text-shadow 0.5s ease-in;
+}
+
+.title:hover {
+  text-shadow: 5px 5px 3px var(--text);
+  transition: text-shadow 0.4s ease-out;
+}
+
+.left {
+  text-align: left;
+}
+
+.only-small {
+  display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  .only-small {
+    display: block !important;
+  }
+
+  .only-large {
+    display: none !important;
+  }
+
+  .logo-container:hover svg {
+  transform: scale(125%)
+             rotate(-7deg)
+             translate(0, -10px);
+  }
+
+  .col-2 {
+    display: block;
+  }
+  .col-2 > * {
+    width: 100vw;
+  }
+
+  .col-2 > .col-thin {
+    width: 100vw;
+  }
+}
